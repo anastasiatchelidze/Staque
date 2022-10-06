@@ -1,1 +1,9 @@
 # Staque
+
+This program creates a data structure Staque that stores integers. It follows the LIFO rule. Even numbers are added in the front of the Staque and odd numbers are added to the back of the structure. The last added numbers are deleted first.
+
+Staque is implemented by doubly-linked list which has 2 pointers: next (pointing to the next node) and prev (pointing to the previous node). Doubly-linked list in this task is efficient because deletion and insertion from both sides (front or back) happens in the constant time and there is no need to traverse the list from the beginning to end to add or remove elements.
+
+There are three different removal methods which are implemented by two overloaded functions. pop(int numEven, int numOdd) receives as parameters quantity of even and odd numbers which user wants to delete from the list. Using the variables countEven and countOdd which keep track of the count of each type of integers function runs or displays error if specified numbers are more than the elements in the Staque. If user wants to delete only even numbers, he/she can just pass zero as the parameter numOdd or vice versa. pop(int num) allows user to delete certain number of last added elements without specifying whether they are odd or even. To keep an account of which number was inserted the last, program uses variable order which is data member of class Node. If user wants to delete only the last one element from the list, the same function pop(int num) can be used, because it has a default parameter and if omitted, it’s value is 1 by default. Therefore, by the command pop() the last added number will be removed from the list. 
+
+Program also includes copy constructor, overloaded assignment operator (for avoiding the aliasing problem), destructor, predicate method isEmpty() for checking whether the Staque is empty or not and overloaded output operator which can display the list easily using cout.
